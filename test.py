@@ -22,3 +22,5 @@ def test_temps_question1(time_allowed):
 
 if __name__ == "__main__":
     test_temps_question1(0.5)
+
+bonjour
