@@ -90,7 +90,7 @@ def write_time_func(lt: list[tuple[int, float]], func):
     name = "".join(("time_measurement/", func.__name__, ".txt"))
     fic = open(name, "w")
     for tpl in lt:
-        fic.write("{n}\t{t}".format(n=tpl[0], t=tpl[1]))
+        fic.write("{n}\t{t}\n".format(n=tpl[0], t=tpl[1]))
     fic.close()
 
 
@@ -119,10 +119,9 @@ def plot_information_from_fic(path: str, name=""):
 
     plt.plot([tpl[0] for tpl in lt], [tpl[1] for tpl in lt])
 
-    plt.suptitle("".join((name, " temps ")))
-    plt.xlabel("taille de la matrice")
-    plt.ylabel("temps (seconde)")
-
+    plt.title("".join((name, " temps d'exécution")))
+    plt.xlabel("Taille de la matrice")
+    plt.ylabel("Temps (en s)")
     plt.show()
 
 
